@@ -1,0 +1,8 @@
+<H1>HELLO WORLD!!!</H1>
+<H2>HELLO WORLD!!!</H2>
+<H3>HELLO WORLD!!!</H3>
+<H4>HELLO WORLD!!!</H4>
+<H5>HELLO WORLD!!!</H5>
+<H6>HELLO WORLD!!!</H6>
+<?php
+	phpinfo();
