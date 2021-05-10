@@ -52,3 +52,10 @@ services:
           MYSQL_ROOT_PASSWORD: secret
         networks:
          - internal
+    adminer:
+        image: adminer
+        restart: unless-stopped
+        ports:
+          - 8080:8080
+        networks:
+          - internal
