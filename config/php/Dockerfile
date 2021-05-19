@@ -1,5 +1,5 @@
 # Для начала указываем исходный образ, он будет использован как основа
-FROM php:7.3-fpm
+FROM php:8-fpm
 
 # RUN выполняет идущую за ней команду в контексте нашего образа.
 # В данном случае мы установим некоторые зависимости и модули PHP.
@@ -14,8 +14,9 @@ RUN apt-get update && apt-get install -y \
         libmcrypt-dev \
         libpng-dev \
 		libzip-dev \
+		libonig-dev\
     && docker-php-ext-install -j$(nproc) iconv mbstring mysqli pdo_mysql zip \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/\
     && docker-php-ext-install -j$(nproc) gd
 
     
