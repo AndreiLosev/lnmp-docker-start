@@ -1,3 +1,5 @@
+# start conteiner -> docker-compose up -d
+# stop docer conteiner -> docker-compose down
 # Файл docker-compose должен начинаться с указания версии.
 version: '3'
 
@@ -5,7 +7,7 @@ version: '3'
 networks:
     internal:
 
-# Ниже список наших сервисов (контейнеров). NGINX, PHP, MySQL, phpMyAdmin
+# Ниже список наших сервисов (контейнеров). NGINX, PHP, MySQL, adminer
 services:
     nginx:
         # Какую версию образа nginx из официального хранилища DockerHub используем
@@ -38,7 +40,7 @@ services:
         networks:
           - internal
     mysql:
-        image: mysql:5.7
+        image: mysql:latest
         container_name: mysql
         restart: unless-stopped
         command: --default-authentication-plugin=mysql_native_password
